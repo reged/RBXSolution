@@ -35,11 +35,15 @@ namespace RBX
             Random rand = new Random();
 
             str = "";
-            Assembly AI = Assembly.LoadFrom(@dll1);
-            Robots.Add((IRobot)AI.CreateInstance("Robot1.Robot"));
-            Robots[0].Build();
+            Assembly AI1 = Assembly.LoadFrom(@dll1);
+            Assembly AI2 = Assembly.LoadFrom(@dll2);
+            Robots.Add((IRobot)AI1.CreateInstance("Robot1.Robot"));
+            Robots.Add((IRobot)AI2.CreateInstance("Robot2.Robot"));          
             MyHandler1 d1 = new MyHandler1(OnHandler1);
+            Robots[0].Build();
             Robots[0].FireEvent += d1;
+           Robots[1].Build();
+           Robots[1].FireEvent += d1;
 
             
             /*

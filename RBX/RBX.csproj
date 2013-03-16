@@ -34,7 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RobotInterfaces">
+    <Reference Include="RobotInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\RobotInterfaces\bin\Debug\RobotInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
