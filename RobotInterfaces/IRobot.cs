@@ -9,11 +9,13 @@ namespace RobotInterfaces
     public delegate void MyHandler1(object sender, RobotEventArgs e);
     public interface IRobot
     {
-        
+        bool Alive { set; get; }
+        Int32 HP { set; get; }
         Vector Position { set; get; }
         Rectangle Rect { set; get; }
         Size Dim { set; get; }
-
+        List<IRobot> Enemies { set; get; }
+        
         event MyHandler1 FireEvent;
         void Build();
         void Main();    

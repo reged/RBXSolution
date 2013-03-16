@@ -40,6 +40,8 @@ namespace RBX
             Robots[0].Build();
             MyHandler1 d1 = new MyHandler1(OnHandler1);
             Robots[0].FireEvent += d1;
+
+            
             /*
             Robots.Add(new Robot(dll1, new Vector((float)rand.Next(20, 580), (float)rand.Next(20, 580))));
             Robots.Add(new Robot(dll2, new Vector((float)rand.Next(20, 580), (float)rand.Next(20, 580))));
@@ -64,15 +66,18 @@ namespace RBX
         {
             for (int i = 0; i < Robots.Count; i++)
             {
-                IRobot robot = Robots[i];
-                robot.Main();
-                /*robot.EnemyRobots = new List<Robot>(Robots);
-                robot.EnemyRobots.Remove(robot);
-                if (robot.HP <= 0)
+                if (Robots[i].Alive)
                 {
-                    DestroyRobot(robot);
-                    robot.Alive = false;
-                }*/
+                    IRobot robot = Robots[i];
+                    robot.Main();
+                    robot.Enemies = new List<IRobot>(Robots);
+                    robot.Enemies.Remove(robot);
+                    if (robot.HP <= 0)
+                    {
+                        DestroyRobot(robot);
+                        robot.Alive = false;
+                    }
+                }
             }
 
             
@@ -91,14 +96,14 @@ namespace RBX
             graph.Clear(Color.White);
             foreach (IRobot robot in Robots)
             {
-                //if (robot.Alive)
-               // {
+                if (robot.Alive)
+                {
                     graph.DrawRectangle(new Pen(Color.Red, 2), robot.Rect);
-                //}
-               // else
-                //{
-                //    graph.DrawRectangle(new Pen(Color.Black, 2), robot.Rect);
-                //}
+                }
+                else
+                {
+                    graph.DrawRectangle(new Pen(Color.Black, 2), robot.Rect);
+                }
             }
 
             

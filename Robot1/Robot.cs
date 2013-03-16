@@ -11,15 +11,20 @@ namespace Robot1
     {
         
         public event MyHandler1 FireEvent;
-
+        public bool Alive { set; get; }
+        public Int32 HP { set; get; }
+        public List<IRobot> Enemies { set; get; }
         public Vector Position { set; get; }
         public Rectangle Rect { set; get; }
         public Size Dim { set; get; }
 
         public void Build()
         {
+            Alive = true;
+            HP = 100;
             Dim = new Size(20, 20);
             Position = new Vector(300, 300);
+            List<IRobot> Enemies = new List<IRobot>();
             calcRect();
         }
         public void Main()
