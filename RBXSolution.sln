@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RBX", "RBX\RBX.csproj", "{6BC33718-9E56-4CB5-A17C-9554AF20237A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robot1", "Robot1\Robot1.csproj", "{4CA2AD54-9E60-43B9-B083-86DA9A697D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotInterfaces", "RobotInterfaces\RobotInterfaces.csproj", "{698F4171-686D-4E7E-9119-E609C05BA512}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BC33718-9E56-4CB5-A17C-9554AF20237A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC33718-9E56-4CB5-A17C-9554AF20237A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC33718-9E56-4CB5-A17C-9554AF20237A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC33718-9E56-4CB5-A17C-9554AF20237A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA2AD54-9E60-43B9-B083-86DA9A697D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA2AD54-9E60-43B9-B083-86DA9A697D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA2AD54-9E60-43B9-B083-86DA9A697D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA2AD54-9E60-43B9-B083-86DA9A697D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698F4171-686D-4E7E-9119-E609C05BA512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698F4171-686D-4E7E-9119-E609C05BA512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698F4171-686D-4E7E-9119-E609C05BA512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698F4171-686D-4E7E-9119-E609C05BA512}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
