@@ -23,8 +23,8 @@ namespace RBX
         private void gameTimer_Tick(object sender, EventArgs e)
         {            
             game.NextStep();
-            hpLabel0.Text = game.str;
-           // hpLabel1.Text = Game.Robots[1].HP.ToString(); 
+            hpLabel0.Text = Game.Robots[0].HP.ToString(); 
+            hpLabel1.Text = Game.Robots[1].HP.ToString(); 
            // hpLabel2.Text = Game.Robots[2].HP.ToString();
             pictureBox1.Image = game.Bmp;
         }

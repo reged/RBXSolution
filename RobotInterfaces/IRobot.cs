@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RobotInterfaces
 {
-    public delegate void MyHandler1(object sender, RobotEventArgs e);
+    public delegate void FireToHandler(object sender, RobotEventArgs e);
     public interface IRobot
     {
         bool Alive { set; get; }
@@ -16,7 +16,7 @@ namespace RobotInterfaces
         Size Dim { set; get; }
         List<IRobot> Enemies { set; get; }
         
-        event MyHandler1 FireEvent;
+        event FireToHandler FireEvent;
         void Build();
         void Main();    
         

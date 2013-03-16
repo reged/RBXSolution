@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using RobotInterfaces;
 
-namespace Robot2
+namespace Robot
 {
     public class Bullet : IBullet
     {

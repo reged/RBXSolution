@@ -37,13 +37,13 @@ namespace RBX
             str = "";
             Assembly AI1 = Assembly.LoadFrom(@dll1);
             Assembly AI2 = Assembly.LoadFrom(@dll2);
-            Robots.Add((IRobot)AI1.CreateInstance("Robot1.Robot"));
-            Robots.Add((IRobot)AI2.CreateInstance("Robot2.Robot"));          
-            MyHandler1 d1 = new MyHandler1(OnHandler1);
+            Robots.Add((IRobot)AI1.CreateInstance("Robot.Robot"));
+            Robots.Add((IRobot)AI2.CreateInstance("Robot.Robot"));
+            FireToHandler d1 = new FireToHandler(OnFireToHandler);
             Robots[0].Build();
             Robots[0].FireEvent += d1;
-           Robots[1].Build();
-           Robots[1].FireEvent += d1;
+            Robots[1].Build();
+            Robots[1].FireEvent += d1;
 
             
             /*
@@ -60,7 +60,7 @@ namespace RBX
      
         #region Public methods
 
-        public void OnHandler1(object sender, RobotEventArgs e)
+        public void OnFireToHandler(object sender, RobotEventArgs e)
         {
             Bullets.Add(e.Bullet);
             str = "MyEvent" + e.Bullet.Position.ToString();
@@ -73,9 +73,10 @@ namespace RBX
                 if (Robots[i].Alive)
                 {
                     IRobot robot = Robots[i];
-                    robot.Main();
+                    
                     robot.Enemies = new List<IRobot>(Robots);
                     robot.Enemies.Remove(robot);
+                    robot.Main();
                     if (robot.HP <= 0)
                     {
                         DestroyRobot(robot);
@@ -88,6 +89,14 @@ namespace RBX
             for (int i = 0; i < Bullets.Count; i++)
             {
                 Bullets[i].Main();
+                foreach (IRobot robot in Robots)
+                {
+                    if (Rectangle.Intersect(Bullets[i].Rect, robot.Rect) != new Rectangle())
+                    {
+                        robot.HP -= Bullets[i].Damage;
+                        Bullets.Remove(Bullets[i]);
+                    }
+                }
             }
             
             Draw();

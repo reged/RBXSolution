@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BulletEventArgs.cs" />
     <Compile Include="IBullet.cs" />
     <Compile Include="IRobot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

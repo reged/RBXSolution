@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using RobotInterfaces;
 
-namespace Robot1
+namespace Robot
 {
     public class Bullet : IBullet
     {
@@ -14,7 +14,7 @@ namespace Robot1
         public Int32 Damage { get; set; }
         public Size Dim { get; set; } 
         public Rectangle Rect { get; set; }
-
+        public event BulletMainHandler FireEvent;
         public Bullet(Vector position, Vector velocity, Int32 damage)
         {
             Position = position;
@@ -26,6 +26,7 @@ namespace Robot1
         {
             Position = Position + Velocity;
             calcRect();
+            
         }
         void calcRect()
         {
